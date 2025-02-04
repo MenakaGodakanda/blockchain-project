@@ -82,7 +82,7 @@ You should see output like:
 Open a browser and go to `http://localhost:5000`.
 
 ### 1. Home
-- GET / - Returns a welcome message.
+- `http://localhost:5000/` or `http://127.0.0.1:5000/` - Returns a welcome message.
 ![Screenshot 2025-02-04 154615](https://github.com/user-attachments/assets/fc7ec80b-0694-4a35-a2c8-6cdbfb3d8813)
 
 - When you start the server (`python3 node.py`), the blockchain is initialized with a **Genesis Block**:
@@ -90,32 +90,38 @@ Open a browser and go to `http://localhost:5000`.
 - Example of the Genesis Block:
 ![Screenshot 2025-02-04 154653](https://github.com/user-attachments/assets/861b94a1-23b2-41ce-ba13-b8f7b7ce9dca)
 
+- **Block Details:**
+  - **Index**: Position of the block in the chain.
+  - **Previous Hash**: The hash of the previous block, ensuring continuity.
+  - **Timestamp**: When the block was created.
+  - **Data**: The user-provided input.
+  - **Proof**: The proof of work satisfying the difficulty level.
+  - **Hash**: The unique hash for this block.
 
 ### 2. Mine a Block
-POST /mine - Mines a new block with provided data.
-
-Request Example:
+- Open another terminal and mine a new block with provided data.
+- Request Example:
 ```
 curl -X POST http://127.0.0.1:5000/mine -H "Content-Type: application/json" -d '{"data": "My first mined block"}'
 ```
-Response Example:
+- Response Example:
 ![Screenshot 2025-02-04 154702](https://github.com/user-attachments/assets/f29d76a9-4d01-43bc-922b-844e727ca89d)
 
 ### 3. Get the Blockchain
-GET /chain - Retrieves the entire blockchain.
+- `http://127.0.0.1:5000//chain` - Retrieves the entire blockchain.
 
-Response Example:
+- Response Example:
 ![Screenshot 2025-02-04 154710](https://github.com/user-attachments/assets/d61a958e-69fe-43e6-8615-a7faf17ef152)
 
 ### 4. Validate the Blockchain
-GET /validate - Checks if the blockchain is valid.
-Response Example:
+- `http://127.0.0.1:5000/validate` - Checks if the blockchain is valid.
+- Response Example:
 ![Screenshot 2025-02-04 155218](https://github.com/user-attachments/assets/92b5e821-5bd2-4af8-b7f9-7ea35d93a388)
 
 ## Web Interface
 - Stop running `node.py`.
 - The `web_interface.py` script will allow users to mine blocks and view the blockchain in a browser.
-Run the Web Interface:
+- Run the Web Interface:
 ```
 python3 web_interface.py
 ```
@@ -123,7 +129,7 @@ python3 web_interface.py
 
 ### 1. Mine a Block
 - Enter data in the input field.
-- Click "Mine Block" to create a new block.
+- Click `Mine Block` to create a new block.
 - The blockchain updates in real-time.
 ![Screenshot 2025-02-04 154222](https://github.com/user-attachments/assets/ca666b94-5f00-4f5d-8bc3-0e1809d02e5f)
 ![Screenshot 2025-02-04 154231](https://github.com/user-attachments/assets/d65ebe05-cabf-4fcf-b080-af4053679f3e)
@@ -132,14 +138,6 @@ python3 web_interface.py
    - The entire blockchain is displayed on the page.
    - Each block includes **index, data, and hash**.
 ![Screenshot 2025-02-04 154243](https://github.com/user-attachments/assets/21df8d77-80fa-44f3-9bae-c64fd37ac405)
-
-## Block Details
-- **Index**: Position of the block in the chain.
-- **Previous Hash**: The hash of the previous block, ensuring continuity.
-- **Timestamp**: When the block was created.
-- **Data**: The user-provided input.
-- **Proof**: The proof of work satisfying the difficulty level.
-- **Hash**: The unique hash for this block.
 
 ## Project Structure
 ```
