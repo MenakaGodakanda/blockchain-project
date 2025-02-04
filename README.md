@@ -110,7 +110,7 @@ Response Example:
 ### 4. Validate the Blockchain
 GET /validate - Checks if the blockchain is valid.
 Response Example:
-![Screenshot 2025-02-04 155218](https://github.com/user-attachments/assets/3d6e6729-e33d-4c62-b5b6-21a4576e459e)
+![Screenshot 2025-02-04 155218](https://github.com/user-attachments/assets/92b5e821-5bd2-4af8-b7f9-7ea35d93a388)
 
 ## Web Interface
 - Stop running `node.py`.
